@@ -10,7 +10,7 @@ app.controller('NameSelectCtrl', function($scope, BattleFactory, $window){
 			return;
 		}else{
 			BattleFactory.setPlayerName($scope.playerName);
-			$window.location.url = "/classSelect";
+			$window.location.href = "#!/classSelect";
 		}
 	};
 

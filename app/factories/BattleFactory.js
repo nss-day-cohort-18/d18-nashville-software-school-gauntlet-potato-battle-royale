@@ -8,4 +8,5 @@ app.factory("BattleFactory", function(){
 		player.name = name;
 	};
 
+	return{setPlayerName};
 });

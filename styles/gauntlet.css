@@ -21,9 +21,9 @@ body {
 /*
   Section styles
  */
-.card { 
+/*.card { 
   display: none;
-}
+}*/
 
 .card__prompt {
   font-size: 1.1em;
