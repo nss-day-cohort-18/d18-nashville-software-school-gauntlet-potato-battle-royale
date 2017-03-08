@@ -10,8 +10,6 @@ var SpellBook = {};
 SpellBook.Spell = function() {
   this.name = "";
   this.damage = 0;
-
-  this.damageTypes = ["lightning", "fire", "water", "earth", "mysticism"];
   this.type = "";
 
   this.toString = function() {
@@ -19,17 +17,40 @@ SpellBook.Spell = function() {
   };
 };
 
-/*
-  An elemental sphere that can be cast by a magical class
- */
-SpellBook.Sphere = function() {
-  this.name = "sphere";
+SpellBook.Lightning = function() {
+  this.name = "Lightning Strike";
   this.damage = Math.floor(Math.random() * 10 + 10);
-
-  var random = Math.round(Math.random() * (this.damageTypes.length - 1));
-  this.type = this.damageTypes[random];
+  this.type = "lightning";
 };
-SpellBook.Sphere.prototype = new SpellBook.Spell();
+SpellBook.Lightning.prototype = new SpellBook.Spell();
+
+SpellBook.Fire = function() {
+  this.name = "FireBall";
+  this.damage = Math.floor(Math.random() * 10 + 10);
+  this.type = "fire";
+};
+SpellBook.Fire.prototype = new SpellBook.Spell();
+
+SpellBook.Ice = function() {
+  this.name = "Ice Spike";
+  this.damage = Math.floor(Math.random() * 10 + 10);
+  this.type = "ice";
+};
+SpellBook.Ice.prototype = new SpellBook.Spell();
+
+SpellBook.Earth = function() {
+  this.name = "Earthquake";
+  this.damage = Math.floor(Math.random() * 10 + 10);
+  this.type = "earth";
+};
+SpellBook.Earth.prototype = new SpellBook.Spell();
+
+SpellBook.Mysticism = function() {
+  this.name = "Holy Smite";
+  this.damage = Math.floor(Math.random() * 10 + 10);
+  this.type = "mysticism";
+};
+SpellBook.Mysticism.prototype = new SpellBook.Spell();
 
 
 return {SpellBook};
