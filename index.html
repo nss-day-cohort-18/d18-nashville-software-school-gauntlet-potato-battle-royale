@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <title>Gauntlet</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="/lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
 </head>
 
@@ -167,7 +168,17 @@
 
   </article>
 
-  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+              <!-- Angular tags -->
+  <script src="/lib/node_modules/angular/angular.min.js"></script>
+  <script src="/lib/node_modules/angular-route/angular-route.min.js"></script>
+  <script src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+              <!-- Controller tags -->
+  <script src="/app/controllers/ClassCtrl.js"></script>
+  <script src="/app/controllers/PlayerCtrl.js"></script>
+  <script src="/app/controllers/WeaponCtrl.js"></script>
+
   <script src="javascripts/weapons.js"></script>
   <script src="javascripts/classes.js"></script>
   <script src="javascripts/spells.js"></script>
