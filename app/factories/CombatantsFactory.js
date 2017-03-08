@@ -42,7 +42,7 @@ Combatants.Player = function(name) {
 
 Combatants.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
-}
+};
 
 Combatants.Player.prototype.generateClass = function() {
   // Get a random index from the allowed classes array
@@ -105,7 +105,7 @@ Combatants.Orc = function() {
     // Composes the corresponding player class into the player object
     this.class = new ClassesFactory.GuildHall[randomClass]();
     return this.class;
-  }
+  };
 };
 
 Combatants.Orc.prototype = new Combatants.Monster();

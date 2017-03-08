@@ -16,6 +16,10 @@ app.config(function($routeProvider) {
 		templateUrl: "partials/WeaponSelect.html",
 		controller: "WeaponSelectCtrl"
 	}).
+	when("/spellSelect", {
+		templateUrl: "partials/SpellSelect.html",
+		controller: "SpellSelectCtrl"
+	}).
 	when("/battle", {
 		templateUrl: "partials/Battle.html",
 		controller: "BattleCtrl"
