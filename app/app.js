@@ -5,7 +5,7 @@ let app = angular.module("BattleRoyale", ["ngRoute"]);
 app.config(function($routeProvider) {
 	$routeProvider.
 	when("/", {
-		templateUrl: "partials/nameSelect.html",
+		templateUrl: "partials/NameSelect.html",
 		controller: "NameSelectCtrl"
 	}).
 	when("/classSelect", {
