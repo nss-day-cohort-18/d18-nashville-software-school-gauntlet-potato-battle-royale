@@ -25,6 +25,12 @@ body {
   display: none;
 }*/
 
+.newPinAlert {
+    display: none;
+    text-align: center;
+    font-weight: 600;
+}
+
 .card__prompt {
   font-size: 1.1em;
   font-weight: bold;
