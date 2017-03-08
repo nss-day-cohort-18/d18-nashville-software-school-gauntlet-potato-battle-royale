@@ -10,9 +10,11 @@
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
 </head>
 
-<body>
+<body ng-app="BattleRoyale">
 
-  <article id="game-container">
+<div ng-view></div>
+
+  <!-- <article id="game-container">
 
    <!--  <section id="player-setup" class="card card--name">
       <div class="card__prompt">
@@ -32,7 +34,7 @@
       </div>
     </section> -->
 
-   <!--  <section id="class-select" class="card card--class">
+    <section id="class-select" class="card card--class">
       <div class="card__prompt">
         <div>CHOOSE YOUR PATH</div>
         <div>
@@ -166,7 +168,7 @@
 
     <!-- <section id="battleground" class="card card--battleground"></section> -->
 
-  </article>
+  <!-- </article> -->
 
               <!-- Angular tags -->
   <script src="/lib/node_modules/angular/angular.min.js"></script>
@@ -175,10 +177,17 @@
   <script src="/lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
               <!-- Controller tags -->
-  <script src="/app/controllers/ClassCtrl.js"></script>
-  <script src="/app/controllers/PlayerCtrl.js"></script>
-  <script src="/app/controllers/WeaponCtrl.js"></script>
+  <script src="/app/controllers/ClassSelectCtrl.js"></script>
+  <script src="/app/controllers/NameSelectCtrl.js"></script>
+  <script src="/app/controllers/WeaponSelectCtrl.js"></script>
   <script src="/app/controllers/BattleCtrl.js"></script>
+
+              <!-- Factory tags -->
+  <script src="app/factories/ClassesFactory.js"></script>
+  <script src="app/factories/CombatantsFactory.js"></script>
+  <script src="app/factories/SpellsFactory.js"></script>
+  <script src="app/factories/WeaponFactory.js"></script>
+
 
   <script src="javascripts/weapons.js"></script>
   <script src="javascripts/classes.js"></script>
