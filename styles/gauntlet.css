@@ -21,6 +21,7 @@ body {
 /*
   Section styles
  */
+
 /*.card { 
   display: none;
 }*/
@@ -29,6 +30,7 @@ body {
     display: none;
     text-align: center;
     font-weight: 600;
+
 }
 
 .card__prompt {

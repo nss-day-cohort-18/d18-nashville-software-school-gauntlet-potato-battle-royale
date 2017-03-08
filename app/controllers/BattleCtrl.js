@@ -1,5 +1,5 @@
 "use strict";
 
-app.controller('BattleCtrl', function(){
-	
+app.controller('BattleCtrl', function(BattleFactory){
+
 });

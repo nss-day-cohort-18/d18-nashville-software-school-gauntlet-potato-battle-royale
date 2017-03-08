@@ -18,4 +18,5 @@ console.log("BattleFactory");
 
 
 	return{setPlayerName, setPlayerWeapon};
+
 });
