@@ -12,7 +12,7 @@ app.controller('WeaponSelectCtrl', function($scope, BattleFactory, $window, Weap
 
 	$scope.setWeapon = (weapon) => {
 		let blah = new WeaponFactory.MeleeCombat[weapon]();
-		console.log("my weapon", blah);
+		// console.log("my weapon", blah);
 		BattleFactory.setPlayerWeapon(blah);
 	};
 });

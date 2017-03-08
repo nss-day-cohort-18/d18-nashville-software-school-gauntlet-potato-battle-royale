@@ -28,4 +28,5 @@ console.log("BattleFactory");
 
 	return{setPlayerName, setPlayerWeapon, setPlayerClass, setPlayerSpell};
 
+
 });
