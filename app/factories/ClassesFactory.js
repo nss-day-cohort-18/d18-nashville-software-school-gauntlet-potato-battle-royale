@@ -74,7 +74,6 @@ GuildHall.Monk.prototype = new GuildHall.Fighter();
       - Sorcerer
  */
 GuildHall.Mage = function() {
-  this.name = "Mage";
   this.magical = true;
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus - 20;
