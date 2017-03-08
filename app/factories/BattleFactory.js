@@ -21,7 +21,7 @@ console.log("BattleFactory");
 		console.log("player.class", player.class);
 	};
 
-	};
+	
 
 	return{setPlayerName, setPlayerWeapon, setPlayerClass};
 
