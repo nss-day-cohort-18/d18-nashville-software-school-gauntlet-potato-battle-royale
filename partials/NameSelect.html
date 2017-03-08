@@ -1,15 +1,15 @@
-<section id="player-setup" class="card card--name" ng-controller="PlayerCtrl">
+<section id="player-setup" class="card card--name" ng-controller="NameSelectCtrl">
     <div class="card__prompt">
       <div>RECORD YOUR NAME, ADVENTURER</div>
       <div class="field">
-        <input type="text" autofocus="true" id="player-name" class="field__textinput">
+        <input type="text" autofocus="true" id="player-name" class="field__textinput" ng-model=playerName>
       </div>
     </div>
 
     <div class="card__button">
       <a class="card__link btn btn--big btn--orange" 
          href="#" 
-         next="card--class">
+         next="card--class" ng-click="setPlayerName()">
         <span class="btn__prompt">></span>
         <span class="btn__text">Select class</span>
       </a>
