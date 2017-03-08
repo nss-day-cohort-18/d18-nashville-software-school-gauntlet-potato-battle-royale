@@ -21,7 +21,16 @@ body {
 /*
   Section styles
  */
-.card {
+
+/*.card { 
+  display: none;
+}*/
+
+.newPinAlert {
+    display: none;
+    text-align: center;
+    font-weight: 600;
+
 }
 
 .card__prompt {
