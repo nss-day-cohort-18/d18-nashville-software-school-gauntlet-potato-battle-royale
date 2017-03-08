@@ -15,9 +15,11 @@ console.log("BattleFactory");
 		console.log("player.weapon", player.weapon);
 	};
 
-	let setPlayerClass = (potato) => {
-		player.class = potato;
+
+	let setPlayerClass = (playerClass) => {
+		player.class = playerClass;
 		console.log("player.class", player.class);
+	};
 
 	};
 
