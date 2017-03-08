@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('NameSelectCtrl', function($scope, BattleFactory, $window){
+app.controller('NameSelectCtrl', function($scope, BattleFactory, $window, $location){
 	console.log("NameSelectCtrl");
 
 
@@ -9,8 +9,9 @@ app.controller('NameSelectCtrl', function($scope, BattleFactory, $window){
 			//put a warning here to alert user to pick a name
 			return;
 		}else{
-			BattleFactory.setPlayerName($scope.playerName);
 			$window.location.href = "#!/classSelect";
+			BattleFactory.setPlayerName($scope.playerName);
+			console.log("window.location", $window.location.href);
 		}
 	};
 
