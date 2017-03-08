@@ -126,8 +126,9 @@ GuildHall.Sorcerer.prototype = new GuildHall.Mage();
 
 GuildHall.Sneaky = function () {
   this.healthBonus = 15;
-  this.strengthBonus = 10;
+  this.strengthBonus = 5;
   this.intelligenceBonus = 20;
+  this.dexterityBonus = 25;
 };
 GuildHall.Sneaky.prototype = new GuildHall.PlayerClass();
 
@@ -135,6 +136,7 @@ GuildHall.Thief = function () {
   this.name = "Thief";
   this.healthBonus = this.healthBonus - 5;
   this.intelligenceBonus = this.intelligenceBonus + 10;
+  this.dexterityBonus = this.dexterityBonus + 15;
 };
 GuildHall.Thief.prototype = new GuildHall.Sneaky();
 
@@ -143,6 +145,7 @@ GuildHall.Ninja = function () {
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus + 10;
   this.intelligenceBonus = this.intelligenceBonus + 5;
+  this.dexterityBonus = this.dexterityBonus + 20;
 };
 GuildHall.Ninja.prototype = new GuildHall.Sneaky();
 
@@ -151,6 +154,7 @@ GuildHall.Assassin = function () {
   this.healthBonus = this.healthBonus + 10;
   this.strengthBonus = this.strengthBonus + 5;
   this.intelligenceBonus = this.intelligenceBonus + 5;
+  this.dexterityBonus = this.dexterityBonus + 30;
 };
 GuildHall.Assassin.prototype = new GuildHall.Sneaky();
 
