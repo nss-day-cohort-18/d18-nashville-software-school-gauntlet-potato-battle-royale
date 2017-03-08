@@ -1,14 +1,17 @@
 "use strict";
 
-app.controller('ClassSelectCtrl', function($scope, ClassesFactory){
+app.controller('ClassSelectCtrl', function($scope, $window, ClassesFactory, BattleFactory){
 
 	$scope.classes = ['Warrior', 'Valkyrie', 'Berserker', 'Monk', 'Wizard', 'Sorcerer', 'Conjurer', 'Thief', 'Ninja', 'Assassin', 'Random'];
 
-	 let playerClass = {};
-
     $scope.setPlayerClass = (selectedClass) => {
-        playerClass = new ClassesFactory.GuildHall[selectedClass]();
-        console.log("playerClass: ", playerClass);
+      var playerClass = new ClassesFactory.GuildHall[selectedClass]();
+      BattleFactory.setPlayerClass(playerClass);
+      if (playerClass.magical === true){
+      	$window.location.href = "#!/spellSelect";
+      } else {
+      	$window.location.href = "#!/weaponSelect";
+    	}
     };
 });
 
