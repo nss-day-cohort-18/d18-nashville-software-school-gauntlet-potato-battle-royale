@@ -1,0 +1,16 @@
+ <section id="spell-select" class="card card--spell" ng-controller="SpellSelectCtrl">
+      <div class="card__prompt">
+        <div>Choose your Godlike Power</div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div ng-repeat="spell in spells" class="col-sm-4">
+            <div class="card__button" ng-click="setPlayerSpell(spell)">
+              <a class="class__link btn btn--big btn--blue">
+                <span class="btn__prompt"></span>
+                <span class="btn__text">{{spell}}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
