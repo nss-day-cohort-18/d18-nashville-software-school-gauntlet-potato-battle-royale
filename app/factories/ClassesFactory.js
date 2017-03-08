@@ -1,7 +1,7 @@
 "use strict";
 
 app.factory("ClassesFactory", function() {
-
+console.log("ClassesFactory");
 
 var GuildHall = {};
 
