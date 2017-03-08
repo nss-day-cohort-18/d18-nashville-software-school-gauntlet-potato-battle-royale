@@ -21,8 +21,7 @@ body {
 /*
   Section styles
  */
-.card { 
-  display: none;
+.card {
 }
 
 .card__prompt {
