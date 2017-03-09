@@ -2,12 +2,12 @@
 
 app.controller('SpellSelectCtrl', function($scope, $window, SpellsFactory, BattleFactory){
 
-	$scope.spells = ["Lightning", "Fire", "Water", "Earth", "Mysticism"];
+	$scope.spells = ["Lightning", "Fire", "Ice", "Earth", "Mysticism"];
 
 	let playerSpell = {};
 
     $scope.setPlayerSpell = (selectedSpell) => {
-        playerSpell = new SpellsFactory.SpellBook[selectedSpell]();
+      playerSpell = new SpellsFactory.SpellBook[selectedSpell]();
     	BattleFactory.setPlayerSpell(playerSpell);
     	$window.location.href = "#!/battle";
     };
