@@ -1,1 +1,116 @@
-<section id="battleground" class="card card--battleground"></section>
+<div class="container-fluid">
+	<div class="row no-gutter">
+	  	  <div class="col-xs-4 col-height col-text">
+
+	  	<div class="moveDown"></div>
+
+	        <article><strong>Name:</strong> {{player.name}}</article>
+		        <div>
+		          <img class="image" src="../images/barbarian2.jpg" alt="Player">
+		        </div>
+		      <div class="row">
+			      <div class="col-xs-2">
+			      	 <h4><strong>Health:</strong></h4>
+			      </div>
+			     	<div class="col-xs-10">
+				      <div class="progress inchDown">
+							  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+							  aria-valuemin="0" aria-valuemax="100" style="width:{{player.healthbar}}%">
+							    {{player.health}}
+							  </div>
+							</div>
+						</div>
+					</div>
+
+
+		      <br>
+		      <div>
+		      	<ul class="list-group reset smallerText">
+		      		<li class="list-group-item"><small>Class: {{player.class.name}}</small></li>
+		      		<li class="list-group-item"><small>Attack: {{player.weapon.name}}{{player.spell.name}}</small></li>
+						  <li class="list-group-item"><small>Strength</small> <span class="badge">{{player.strength}}</span></li>
+						  <li class="list-group-item"><small>Intelligence</small> <span class="badge">{{player.intelligence}}</span></li> 
+						  <li class="list-group-item"><small>Max Damage</small> <span class="badge">{{player.weapon.damage}} {{player.spell.damage}}</span></li> 
+						</ul>
+		      </div>
+
+
+	  </div>
+
+
+	  <div class="col-xs-4 col-height col-text">
+	  	<div class="BattleContext" ng-repeat="each in battleLog">
+	  		<p class="{{each.turn}} {{each.highlight}}">{{each.attacker}} hit {{each.attackee}} for {{each.damage}} hp!</p>
+	  	</div>
+	  	<div ng-repeat="each in winLog">
+	  		<p class="{{each.highlight}}">{{each.winner}} defeated {{each.loser}} for a final blow of {{each.damage}} damage!</p>
+	  	</div>
+
+			  	<div class="col-xs-10 align-bottom">
+			  		<button class="col-xs-3 btn-primary attack-btn initial" ng-click="attack()">Attack!</button>
+			  		<button class="col-xs-4 btn-warning attack-btn initial" ng-click="autoAttack()">Auto Attack</button>
+			  		<button class="col-xs-4 btn-danger attack-btn initial" ng-click="stopAutoAttack()">Stop Auto</button>
+			  	</div>	
+
+	  </div>
+	  
+
+	  <div class="col-xs-4 col-height col-text">
+
+	  	<div class="moveDown"></div>
+
+	        <article><strong>Species:</strong> {{enemy.species}}</article>
+		        <div>
+		          <img class="image" src="../images/orc.jpg" alt="Orc">
+		        </div>
+
+
+		      <div class="row">
+			      <div class="col-xs-2">
+			      	 <h4><strong>Health:</strong></h4>
+			      </div>
+			     	<div class="col-xs-10">
+				      <div class="progress inchDown">
+							  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40"
+							  aria-valuemin="0" aria-valuemax="100" style="width:{{enemy.healthbar}}%">
+							    {{enemy.health}}
+							  </div>
+							</div>
+						</div>
+					</div>
+
+
+		      <br>
+		      <div>
+		      	<ul class="list-group reset smallerText">
+		      		<li class="list-group-item"><small>Class: {{enemy.class.name}}</small></li>
+		      		<li class="list-group-item"><small>Attack: {{enemy.weapon.name}}</small></li>
+						  <li class="list-group-item"><small>Strength</small> <span class="badge">{{enemy.strength}}</span></li>
+						  <li class="list-group-item"><small>Intelligence</small> <span class="badge">{{enemy.intelligence}}</span></li> 
+						  <li class="list-group-item"><small>Max Damage</small> <span class="badge">{{enemy.weapon.damage}}</span></li> 
+						</ul>
+		      </div>
+
+
+	  </div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Game Over</h4>
+      </div>
+      <div class="modal-body">
+      <h4 class="initial">Thank You for playing, please click "Play Again!" to play again!</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default initial" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary initial" ng-click="startOver()">Play Again!</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  line-height: 1em;
 }
 
 .field {
@@ -110,4 +111,70 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+
+
+.border {
+  border: 2px solid red;
+}
+
+/*.test {
+  min-height: 200px;
+}*/
+
+.col-height {
+  min-height: 90vh;
+  display: table;
+}
+
+.col-text {
+  display: table-cell; 
+  vertical-align: middle;
+  text-align: center; 
+}
+
+.reset {
+  display: initial;
+  vertical-align: initial;
+  text-align: initial;
+}
+
+.moveDown {
+  min-height: 10vh;
+}
+
+.inchDown {
+  margin-top: 10px;
+}
+
+.smallerText {
+  font-size: 0.85em;
+}
+
+.image {
+  margin: 0 auto;
+  max-width: 20vw;
+  max-height: 30vh;
+}
+
+.player {
+  text-align: left;
+}
+
+.enemy {
+  text-align: right;
+}
+
+.attack-btn {
+  margin: 5px;
+}
+
+.initial {
+  font: initial;
+}
+
+.align-bottom {
+  position: absolute;
+  bottom: 1%;
+  min-width: 275px;
 }
