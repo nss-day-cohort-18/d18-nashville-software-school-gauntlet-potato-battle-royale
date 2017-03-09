@@ -28,6 +28,8 @@ GuildHall.PlayerClass = function() {
       - Monk
  */
 GuildHall.Fighter = function() {
+  this.bonus  = "Str";
+  this.ac = 9;
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };
@@ -74,6 +76,8 @@ GuildHall.Monk.prototype = new GuildHall.Fighter();
       - Sorcerer
  */
 GuildHall.Mage = function() {
+  this.bonus = "Int";
+  this.ac = 7;
   this.magical = true;
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus - 20;
@@ -125,6 +129,8 @@ GuildHall.Sorcerer.prototype = new GuildHall.Mage();
  */
 
 GuildHall.Sneaky = function () {
+  this.bonus = "Dex";
+  this.ac = 8;
   this.healthBonus = 15;
   this.strengthBonus = 5;
   this.intelligenceBonus = 20;

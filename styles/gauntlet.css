@@ -140,11 +140,12 @@ body {
 }
 
 .moveDown {
-  min-height: 10vh;
+  min-height: 5vh;
 }
 
 .inchDown {
   margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .smallerText {
@@ -166,7 +167,9 @@ body {
 }
 
 .attack-btn {
-  margin: 5px;
+  padding: 0;
+  margin: 1px;
+  border-radius: 20px;
 }
 
 .initial {

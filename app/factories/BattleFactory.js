@@ -5,6 +5,8 @@ console.log("BattleFactory");
 
 	let player = {};//as the user progresses through building their character, the values and choice get stored into this object
 	let enemy = {};
+	let addedBonusesPlayer = null;
+	let addedBonusesEnemy = null;
 
 	player = new CombatantsFactory.Combatants.Player();
 	enemy = new CombatantsFactory.Combatants.Orc();
@@ -33,11 +35,27 @@ console.log("BattleFactory");
 	};
 
 	let getPlayer = () => {
-		return player;
+		if (addedBonusesPlayer) {
+			return player;
+		} else {
+			player.health = player.health + player.class.healthBonus;
+			player.strength = player.strength + player.class.strengthBonus;
+			player.intelligence = player.intelligence + player.class.intelligenceBonus;
+			addedBonusesPlayer = true;
+			return player;
+		}
 	};
 
 	let getEnemy = () => {
-		return enemy;
+		if (addedBonusesEnemy) {
+			return enemy;
+		} else {
+			enemy.health = enemy.health + enemy.class.healthBonus;
+			enemy.strength = enemy.strength + enemy.class.strengthBonus;
+			enemy.intelligence = enemy.intelligence + enemy.class.intelligenceBonus;
+			addedBonusesEnemy = true;
+			return enemy;
+		}
 	};
 
 	let resetStats = () => {
