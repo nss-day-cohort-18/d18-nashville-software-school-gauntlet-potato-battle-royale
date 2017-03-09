@@ -23,10 +23,6 @@ body {
   Section styles
  */
 
-/*.card { 
-  display: none;
-}*/
-
 .newPinAlert {
     display: none;
     text-align: center;
@@ -47,7 +43,26 @@ body {
   text-align: center;
 }
 
+#battleLog {
+  overflow: scroll;
+  border: 1px solid black;
+  max-height: 3vh;
+  display: table;
+}
 
+#battleLog::-webkit-scrollbar {
+    width: 1em;
+}
+
+.btn-group-vertical {
+  display: table-row;
+  vertical-align: bottom;
+}
+
+.BattleContext {
+  display: table-row;
+  vertical-align: top;
+}
 /*
   Button styles
  */
@@ -165,8 +180,9 @@ body {
   text-align: right;
 }
 
-.attack-btn {
+.btn-group {
   margin: 5px;
+  border-radius: 10%;
 }
 
 .initial {
