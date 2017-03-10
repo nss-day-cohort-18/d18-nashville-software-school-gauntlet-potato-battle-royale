@@ -27,13 +27,16 @@ console.log("BattleFactory");
 		} else {
 			enemy.weapon = new WeaponFactory.MeleeCombat.Dagger();
 		}
-		console.log("enemy.weapon? ", enemy.weapon, randoNum2);
-		if (randoNum >= 0 && randoNum <= 3) {
+		if (randoNum >= 0 && randoNum < 2) {
 			enemy.image = "../images/orc.jpg";
-		} else if (randoNum >= 4 && randoNum <= 7) {
+		} else if (randoNum >= 2 && randoNum < 4) {
 			enemy.image = "../images/orc2.jpg";
-		} else {
+		} else if (randoNum >= 4 && randoNum < 6) {
 			enemy.image = "../images/orc3.jpg";
+		} else if (randoNum >= 6 && randoNum < 8) {
+			enemy.image = "../images/troll.jpg";
+		} else {
+			enemy.image = "../images/monster2.jpg";
 		}
 	};
 
@@ -108,13 +111,16 @@ console.log("BattleFactory");
 		} else {
 			enemy.weapon = new WeaponFactory.MeleeCombat.Dagger();
 		}
-		console.log("enemy.weapon? ", enemy.weapon);
-		if (randoNum >= 0 && randoNum <= 3) {
+		if (randoNum >= 0 && randoNum < 2) {
 			enemy.image = "../images/orc.jpg";
-		} else if (randoNum >= 4 && randoNum <= 7) {
+		} else if (randoNum >= 2 && randoNum < 4) {
 			enemy.image = "../images/orc2.jpg";
-		} else {
+		} else if (randoNum >= 4 && randoNum < 6) {
 			enemy.image = "../images/orc3.jpg";
+		} else if (randoNum >= 6 && randoNum < 8) {
+			enemy.image = "../images/troll.jpg";
+		} else {
+			enemy.image = "../images/monster2.jpg";
 		}
 
 		return enemy;

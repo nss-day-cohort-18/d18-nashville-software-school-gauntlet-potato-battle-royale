@@ -49,6 +49,7 @@ GuildHall.Warrior.prototype = new GuildHall.Fighter();
 
 
 GuildHall.Valkyrie = function() {
+  this.image = "../images/valk.jpg";
   this.name = "Valkyrie";
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
@@ -58,6 +59,7 @@ GuildHall.Valkyrie.prototype = new GuildHall.Fighter();
 
 
 GuildHall.Berserker = function() {
+  this.image = "../images/beserker.jpg";
   this.name = "Berserker";
   this.healthBonus = this.healthBonus + 35;
   this.strengthBonus = this.strengthBonus + 20;
@@ -67,6 +69,7 @@ GuildHall.Berserker.prototype = new GuildHall.Fighter();
 
 
 GuildHall.Monk = function() {
+  this.image = "../images/monk.jpg";
   this.name = "Monk";
   this.healthBonus = this.healthBonus + 10;
   this.strengthBonus = this.strengthBonus + 40;
@@ -116,6 +119,7 @@ GuildHall.Wizard.prototype = new GuildHall.Mage();
 
 
 GuildHall.Conjurer = function() {
+  this.image = "../images/conj.jpg";
   this.name = "Conjurer";
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
@@ -125,6 +129,7 @@ GuildHall.Conjurer.prototype = new GuildHall.Mage();
 
 
 GuildHall.Sorcerer = function() {
+  this.image = "../images/sorcerer.jpg";
   this.name = "Sorcerer";
   this.healthBonus = this.healthBonus - 5;
   this.strengthBonus = this.strengthBonus - 20;
@@ -161,6 +166,7 @@ GuildHall.Thief = function () {
 GuildHall.Thief.prototype = new GuildHall.Sneaky();
 
 GuildHall.Ninja = function () {
+  this.image = "../images/ninja.jpg";
   this.name = "Ninja";
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus + 10;
@@ -170,6 +176,7 @@ GuildHall.Ninja = function () {
 GuildHall.Ninja.prototype = new GuildHall.Sneaky();
 
 GuildHall.Assassin = function () {
+  this.image = "../images/assassin.jpg";
   this.name = "Assassin";
   this.healthBonus = this.healthBonus + 10;
   this.strengthBonus = this.strengthBonus + 5;
