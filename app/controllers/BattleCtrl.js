@@ -261,6 +261,7 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 			$scope.enemy.health = 0;
 			gameOver("You", $scope.enemy.species);
 		}
+		reduceLog();
 	};
 
 	let enemySpecial = () => {
@@ -273,6 +274,7 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 			$scope.enemy.special = 0;
 			$scope.enemy.specialbar = "0";
 			$scope.battleLog.push(newObj);
+			reduceLog();
 			return;
 		}
 		let newObj = {};
@@ -305,6 +307,7 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 			$scope.player.health = 0;
 			gameOver($scope.enemy.species, "You");
 		}
+		reduceLog();
 	};
 
 	$scope.nextFight = () => {
@@ -338,6 +341,7 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 
 	$scope.tryAgain = () => {
 		gameOverKeeper = false;
+		playerHealth += 10;
 		$('#winnerModal').modal('hide');
 		$('#attackBtn').prop('disabled', false);
 		$('#autoBtn').prop('disabled', false);
@@ -394,10 +398,10 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 		$scope.enemy.weapon.name = "The Power of Love";
 		$scope.enemy.strength = "Stronger Than Chuck Norris";
 		$scope.enemy.intelligence = "You Wouldn't Understand";
-		$scope.enemy.dexterity = "Faster Than Lightning";
-		$scope.enemy.health = 9999;
+		$scope.enemy.dexterity = "Fast As Lightning";
+		$scope.enemy.health = 999;
 		enemyHealth = $scope.enemy.health;
-		$scope.enemy.weapon.damage = "Love!";
+		$scope.enemy.weapon.damage = "Alot!";
 		$scope.enemy.image = "../images/meg.jpg";
 		console.log("meg boss time");
 		let newObj = {};
