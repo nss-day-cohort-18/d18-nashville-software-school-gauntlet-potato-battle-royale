@@ -98,7 +98,7 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 				enemyIntSpec = false;
 			} else {
 				let roll = Math.round((Math.random() * 20));
-				if (roll > $scope.player.class.ac) {
+				if (roll > $scope.enemy.class.ac) {
 					playerAttack();
 				} else {
 					playerMiss(roll);
@@ -111,7 +111,7 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 				playerIntSpec = false;
 			} else {
 				let roll = Math.round((Math.random() * 20));
-				if (roll > $scope.enemy.class.ac) {
+				if (roll > $scope.player.class.ac) {
 					enemyAttack();
 				} else {
 					enemyMiss(roll);
@@ -268,7 +268,7 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 			let newObj = {};
 			newObj.highlight = "bg-primary";
 			newObj.string = "She increased Your intelligence by " + 10 + "!";
-			$scope.intelligence = $scope.intelligence + 10;
+			$scope.player.intelligence += 10;
 			enemySpecialCounter = 0;
 			$scope.enemy.special = 0;
 			$scope.enemy.specialbar = "0";
@@ -389,13 +389,13 @@ app.controller('BattleCtrl', function($scope, BattleFactory, $interval, $window)
 		playerSpecialCounter = 0;
 		autoAttacking = false;
 		$interval.cancel(auto);
-		$scope.enemy.species = "Beautiful Nightmare";
+		$scope.enemy.species = "Enigma";
 		$scope.enemy.class.name = "Lord of Code";
 		$scope.enemy.weapon.name = "The Power of Love";
-		$scope.enemy.strength = "Stronger Then Chuck Norris";
+		$scope.enemy.strength = "Stronger Than Chuck Norris";
 		$scope.enemy.intelligence = "You Wouldn't Understand";
 		$scope.enemy.dexterity = "Faster Than Lightning";
-		$scope.enemy.health = 999999999;
+		$scope.enemy.health = 9999;
 		enemyHealth = $scope.enemy.health;
 		$scope.enemy.weapon.damage = "Love!";
 		$scope.enemy.image = "../images/meg.jpg";
