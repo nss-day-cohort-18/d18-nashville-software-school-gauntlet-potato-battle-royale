@@ -13,6 +13,7 @@ GuildHall.PlayerClass = function() {
   this.healthBonus = 0;
   this.strengthBonus = 0;
   this.intelligenceBonus = 0;
+  this.dexterityBonus = 0;
   this.magical = false;
 
   this.toString = function() {
@@ -28,10 +29,12 @@ GuildHall.PlayerClass = function() {
       - Monk
  */
 GuildHall.Fighter = function() {
+  this.image = "../images/barbarian2.jpg";
   this.bonus  = "Str";
   this.ac = 9;
   this.healthBonus = 20;
   this.strengthBonus = 10;
+  this.dexterityBonus = 5;
 };
 GuildHall.Fighter.prototype = new GuildHall.PlayerClass();
 
@@ -40,6 +43,7 @@ GuildHall.Warrior = function() {
   this.name = "Warrior";
   this.healthBonus = this.healthBonus + 25;
   this.strengthBonus = this.strengthBonus + 30;
+  this.dexterityBonus = this.dexterityBonus + 15;
 };
 GuildHall.Warrior.prototype = new GuildHall.Fighter();
 
@@ -48,6 +52,7 @@ GuildHall.Valkyrie = function() {
   this.name = "Valkyrie";
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
+  this.dexterityBonus = this.dexterityBonus + 15;
 };
 GuildHall.Valkyrie.prototype = new GuildHall.Fighter();
 
@@ -56,6 +61,7 @@ GuildHall.Berserker = function() {
   this.name = "Berserker";
   this.healthBonus = this.healthBonus + 35;
   this.strengthBonus = this.strengthBonus + 20;
+  this.dexterityBonus = this.dexterityBonus + 15;
 };
 GuildHall.Berserker.prototype = new GuildHall.Fighter();
 
@@ -64,6 +70,7 @@ GuildHall.Monk = function() {
   this.name = "Monk";
   this.healthBonus = this.healthBonus + 10;
   this.strengthBonus = this.strengthBonus + 40;
+  this.dexterityBonus = this.dexterityBonus + 25;
 };
 GuildHall.Monk.prototype = new GuildHall.Fighter();
 
@@ -76,12 +83,14 @@ GuildHall.Monk.prototype = new GuildHall.Fighter();
       - Sorcerer
  */
 GuildHall.Mage = function() {
+  this.image = "../images/mage2.jpg";
   this.bonus = "Int";
   this.ac = 7;
   this.magical = true;
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 20;
+  this.dexterityBonus = this.dexterityBonus - 5;
 };
 GuildHall.Mage.prototype = new GuildHall.PlayerClass();
 
@@ -91,6 +100,7 @@ GuildHall.Shaman = function() {
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 20;
+  this.dexterityBonus = this.dexterityBonus - 10;
 };
 GuildHall.Shaman.prototype = new GuildHall.Mage();
 
@@ -100,6 +110,7 @@ GuildHall.Wizard = function() {
   this.healthBonus = this.healthBonus - 15;
   this.strengthBonus = this.strengthBonus - 25;
   this.intelligenceBonus = this.intelligenceBonus + 40;
+  this.dexterityBonus = this.dexterityBonus + 5;
 };
 GuildHall.Wizard.prototype = new GuildHall.Mage();
 
@@ -108,6 +119,7 @@ GuildHall.Conjurer = function() {
   this.name = "Conjurer";
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
+  this.dexterityBonus = this.dexterityBonus + 5;
 };
 GuildHall.Conjurer.prototype = new GuildHall.Mage();
 
@@ -117,6 +129,7 @@ GuildHall.Sorcerer = function() {
   this.healthBonus = this.healthBonus - 5;
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 30;
+  this.dexterityBonus = this.dexterityBonus - 5;
 };
 GuildHall.Sorcerer.prototype = new GuildHall.Mage();
 
@@ -129,6 +142,7 @@ GuildHall.Sorcerer.prototype = new GuildHall.Mage();
  */
 
 GuildHall.Sneaky = function () {
+  this.image = "../images/thief2.jpg";
   this.bonus = "Dex";
   this.ac = 8;
   this.healthBonus = 15;

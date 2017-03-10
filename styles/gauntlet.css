@@ -140,7 +140,11 @@ body {
 }
 
 .moveDown {
-  min-height: 5vh;
+  min-height: 2vh;
+}
+
+.moveDown2 {
+  min-height: 2vh;
 }
 
 .inchDown {
@@ -180,4 +184,12 @@ body {
   position: absolute;
   bottom: 1%;
   min-width: 275px;
+}
+
+.smallerPlz {
+  font-size: 0.85em;
+}
+
+.bigger-plz {
+  font-size: 0.8em;
 }

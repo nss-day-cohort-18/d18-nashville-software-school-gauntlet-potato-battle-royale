@@ -6,7 +6,7 @@
 
 	        <article><strong>Name:</strong> {{player.name}}</article>
 		        <div>
-		          <img class="image" src="../images/barbarian2.jpg" alt="Player">
+		          <img class="image" src="{{player.class.image}}" alt="Player" ng-click="showMe('player')">
 		        </div>
 		      <div class="row">
 			      <div class="col-xs-2">
@@ -41,9 +41,10 @@
 		      	<ul class="list-group reset smallerText">
 		      		<li class="list-group-item"><small>Class: {{player.class.name}}</small></li>
 		      		<li class="list-group-item"><small>Attack: {{player.weapon.name}}{{player.spell.name}}</small></li>
-						  <li class="list-group-item"><small>Strength</small> <span class="badge">{{player.strength}}</span></li>
-						  <li class="list-group-item"><small>Intelligence</small> <span class="badge">{{player.intelligence}}</span></li> 
-						  <li class="list-group-item"><small>Max Damage</small> <span class="badge">{{player.weapon.damage}} {{player.spell.damage}}</span></li> 
+						  <li class="list-group-item"><small>Strength</small> <span class="badge bigger-plz">{{player.strength}}</span></li>
+						  <li class="list-group-item"><small>Intelligence</small> <span class="badge bigger-plz">{{player.intelligence}}</span></li>
+						  <li class="list-group-item"><small>Dexterity</small> <span class="badge bigger-plz">{{player.dexterity}}</span></li> 
+						  <li class="list-group-item"><small>Max Damage</small> <span class="badge bigger-plz">{{player.weapon.damage}} {{player.spell.damage}}</span></li> 
 						</ul>
 		      </div>
 
@@ -52,16 +53,17 @@
 
 
 	  <div class="col-xs-4 col-height col-text">
+	  	<div class="moveDown2"></div>
 	  	<div class="BattleContext" ng-repeat="each in battleLog">
-	  		<p class="{{each.turn}} {{each.highlight}}">{{each.string}}</p>
+	  		<p class="{{each.turn}} {{each.highlight}} smallerPlz">{{each.string}}</p>
 	  	</div>
 	  	<div ng-repeat="each in winLog">
-	  		<p class="{{each.highlight}}">{{each.winner}} defeated {{each.loser}} for a final blow of {{each.damage}} damage!</p>
+	  		<p class="{{each.highlight}} smallerPlz">{{each.winner}} defeated {{each.loser}} for a final blow of {{each.damage}} hp!</p>
 	  	</div>
 
 			  	<div class="col-xs-10 align-bottom">
-			  		<button class="col-xs-3 btn-primary attack-btn initial" ng-click="attack()">Attack!</button>
-			  		<button class="col-xs-4 btn-warning attack-btn initial" ng-click="autoAttack()">Auto Attack</button>
+			  		<button class="col-xs-3 btn-primary attack-btn initial" id="attackBtn" ng-click="attack()">Attack!</button>
+			  		<button class="col-xs-4 btn-warning attack-btn initial" id="autoBtn" ng-click="autoAttack()">Auto Attack</button>
 			  		<button class="col-xs-4 btn-danger attack-btn initial" ng-click="stopAutoAttack()">Stop Auto</button>
 			  	</div>	
 
@@ -74,7 +76,7 @@
 
 	        <article><strong>Species:</strong> {{enemy.species}}</article>
 		        <div>
-		          <img class="image" src="../images/orc.jpg" alt="Orc">
+		          <img class="image" src="{{enemy.image}}" alt="Orc" ng-click="showMe('enemy')">
 		        </div>
 
 
@@ -111,9 +113,10 @@
 		      	<ul class="list-group reset smallerText">
 		      		<li class="list-group-item"><small>Class: {{enemy.class.name}}</small></li>
 		      		<li class="list-group-item"><small>Attack: {{enemy.weapon.name}}</small></li>
-						  <li class="list-group-item"><small>Strength</small> <span class="badge">{{enemy.strength}}</span></li>
-						  <li class="list-group-item"><small>Intelligence</small> <span class="badge">{{enemy.intelligence}}</span></li> 
-						  <li class="list-group-item"><small>Max Damage</small> <span class="badge">{{enemy.weapon.damage}}</span></li> 
+						  <li class="list-group-item"><small>Strength</small> <span class="badge bigger-plz">{{enemy.strength}}</span></li>
+						  <li class="list-group-item"><small>Intelligence</small> <span class="badge bigger-plz">{{enemy.intelligence}}</span></li>
+						  <li class="list-group-item"><small>Dexterity</small> <span class="badge bigger-plz">{{enemy.dexterity}}</span></li> 
+						  <li class="list-group-item"><small>Max Damage</small> <span class="badge bigger-plz">{{enemy.weapon.damage}}</span></li> 
 						</ul>
 		      </div>
 
@@ -128,14 +131,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Game Over</h4>
+        <h4 class="modal-title" id="myModalLabel" ng-click="megBoss()">Game Over</h4>
       </div>
       <div class="modal-body">
-      <h4 class="initial">Thank You for playing, please click "Play Again!" to play again!</h4>
+      <h4 class="initial">Thank You for playing, try yours wits and play again!</h4>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default initial" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary initial" ng-click="startOver()">Play Again!</button>
+        <button type="button" class="btn-primary initial" ng-click="startOver()">Start Over!</button>
+        <button type="button" class="btn-primary initial" ng-click="tryAgain()">Try Again!</button>
+        <button type="button" class="btn-warning initial" id="keepGoingBtn" ng-click="nextFight()">Keep Going!</button>
+        <button type="button" class="btn-default initial" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
