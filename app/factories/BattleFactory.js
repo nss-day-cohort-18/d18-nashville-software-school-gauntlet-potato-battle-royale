@@ -8,10 +8,36 @@ console.log("BattleFactory");
 	let addedBonusesPlayer = null;
 	let addedBonusesEnemy = null;
 
-	player = new CombatantsFactory.Combatants.Player();
-	enemy = new CombatantsFactory.Combatants.Orc();
-	enemy.weapon = new WeaponFactory.MeleeCombat.WarAxe();
-	enemy.class = new ClassesFactory.GuildHall.Warrior();
+	let reset = () => {
+		let randoNum = Math.floor((Math.random() * 10) + 1);
+		player = new CombatantsFactory.Combatants.Human();
+		enemy = new CombatantsFactory.Combatants.Orc();
+		if (randoNum >= 0 && randoNum <= 3) {
+			enemy.class = new ClassesFactory.GuildHall.Berserker();
+		} else if (randoNum >= 4 && randoNum <= 7) {
+			enemy.class = new ClassesFactory.GuildHall.Assassin();
+		} else {
+			enemy.class = new ClassesFactory.GuildHall.Wizard();
+		}
+		let randoNum2 = Math.floor((Math.random() * 10) + 1);
+		if (randoNum2 >= 0 && randoNum <= 3) {
+			enemy.weapon = new WeaponFactory.MeleeCombat.BroadSword();
+		} else if (randoNum2 >= 4 && randoNum <= 7) {
+			enemy.weapon = new WeaponFactory.MeleeCombat.WarAxe();
+		} else {
+			enemy.weapon = new WeaponFactory.MeleeCombat.Dagger();
+		}
+		console.log("enemy.weapon? ", enemy.weapon, randoNum2);
+		if (randoNum >= 0 && randoNum <= 3) {
+			enemy.image = "../images/orc.jpg";
+		} else if (randoNum >= 4 && randoNum <= 7) {
+			enemy.image = "../images/orc2.jpg";
+		} else {
+			enemy.image = "../images/orc3.jpg";
+		}
+	};
+
+	reset();
 
 	let setPlayerName = (name) => {
 		player.name = name;
@@ -41,6 +67,7 @@ console.log("BattleFactory");
 			player.health = player.health + player.class.healthBonus;
 			player.strength = player.strength + player.class.strengthBonus;
 			player.intelligence = player.intelligence + player.class.intelligenceBonus;
+			player.dexterity = player.dexterity + player.class.dexterityBonus;
 			addedBonusesPlayer = true;
 			return player;
 		}
@@ -53,19 +80,48 @@ console.log("BattleFactory");
 			enemy.health = enemy.health + enemy.class.healthBonus;
 			enemy.strength = enemy.strength + enemy.class.strengthBonus;
 			enemy.intelligence = enemy.intelligence + enemy.class.intelligenceBonus;
+			enemy.dexterity = enemy.dexterity + enemy.class.dexterityBonus;
 			addedBonusesEnemy = true;
 			return enemy;
 		}
 	};
 
 	let resetStats = () => {
-		player = new CombatantsFactory.Combatants.Player();
-		enemy = new CombatantsFactory.Combatants.Orc();
-		enemy.weapon = new WeaponFactory.MeleeCombat.WarAxe();
-		enemy.class = new ClassesFactory.GuildHall.Warrior();
+		reset();
 	};
 
-	return{setPlayerName, setPlayerWeapon, setPlayerClass, setPlayerSpell, getPlayer, getEnemy, resetStats};
+	let nextEnemy= () => {
+		enemy = new CombatantsFactory.Combatants.Orc();
+		let randoNum = Math.floor(Math.random() * 10);
+		let randoNum2 = Math.floor(Math.random() * 10);
+		if (randoNum >= 0 && randoNum <= 3) {
+			enemy.class = new ClassesFactory.GuildHall.Berserker();
+		} else if (randoNum >= 4 && randoNum <= 7) {
+			enemy.class = new ClassesFactory.GuildHall.Assassin();
+		} else {
+			enemy.class = new ClassesFactory.GuildHall.Wizard();
+		}
+		if (randoNum2 >= 0 && randoNum <= 3) {
+			enemy.weapon = new WeaponFactory.MeleeCombat.BroadSword();
+		} else if (randoNum2 >= 4 && randoNum <= 7) {
+			enemy.weapon = new WeaponFactory.MeleeCombat.WarAxe();
+		} else {
+			enemy.weapon = new WeaponFactory.MeleeCombat.Dagger();
+		}
+		console.log("enemy.weapon? ", enemy.weapon);
+		if (randoNum >= 0 && randoNum <= 3) {
+			enemy.image = "../images/orc.jpg";
+		} else if (randoNum >= 4 && randoNum <= 7) {
+			enemy.image = "../images/orc2.jpg";
+		} else {
+			enemy.image = "../images/orc3.jpg";
+		}
+
+		return enemy;
+	};
+
+
+	return{setPlayerName, setPlayerWeapon, setPlayerClass, setPlayerSpell, getPlayer, getEnemy, resetStats, nextEnemy};
 
 
 });

@@ -20,6 +20,7 @@ Combatants.Player = function(name) {
   this.skinColors = [this.skinColor];
   this.strength = 90;
   this.intelligence = 90;
+  this.dexterity = 90;
 
   this.toString = function() {
     var output = [this.playerName,
@@ -68,6 +69,8 @@ Combatants.Human = function() {
 
   this.species = "Human";
   this.intelligence = this.intelligence + 20;
+  this.strength = this.strength + 5;
+  this.dexterity = this.dexterity + 10;
 
   this.skinColors.push("brown", "red", "white", "disease");
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
@@ -83,9 +86,11 @@ Combatants.Human.prototype = new Combatants.Player();
   constructor function.
  */
 Combatants.Monster = function() {
+  this.image = "../images/orc.jpg";
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
+  this.dexterity = this.dexterity + 15;
 };
 
 Combatants.Monster.prototype = new Combatants.Player();

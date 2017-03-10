@@ -5,13 +5,24 @@ app.controller('ClassSelectCtrl', function($scope, $window, ClassesFactory, Batt
 	$scope.classes = ['Warrior', 'Valkyrie', 'Berserker', 'Monk', 'Wizard', 'Sorcerer', 'Conjurer', 'Thief', 'Ninja', 'Assassin', 'Random'];
 
     $scope.setPlayerClass = (selectedClass) => {
-      var playerClass = new ClassesFactory.GuildHall[selectedClass]();
-      BattleFactory.setPlayerClass(playerClass);
-      if (playerClass.magical === true){
-      	$window.location.href = "#!/spellSelect";
+      if (selectedClass === 'Random') {
+        randomClass();
+        return;
       } else {
-      	$window.location.href = "#!/weaponSelect";
-    	}
+        var playerClass = new ClassesFactory.GuildHall[selectedClass]();
+        BattleFactory.setPlayerClass(playerClass);
+        if (playerClass.magical === true){
+        	$window.location.href = "#!/spellSelect";
+        } else {
+        	$window.location.href = "#!/weaponSelect";
+      	}
+      }
+    };
+
+    let randomClass = () => {
+      let randomNumber = Math.floor(Math.random() * 10);
+      let randomClassIndex = $scope.classes[randomNumber];
+      $scope.setPlayerClass(randomClassIndex);
     };
 });
 
